@@ -1,0 +1,267 @@
+@import url('https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css'); /* это для подключения иконок с сайта */
+html, body, h1, h2, h3, p, a, ul, li, nav, textarea {
+margin: 0;
+padding: 0;}
+html, body {
+height: 100%;
+width: 100%;
+border: 0;
+font-size: 16px;
+font-family: Inter, sans-serif;
+font-style: normal;
+font-weight: 400;
+line-height: 1;
+text-decoration-skip: objects;
+scroll-behavior: smooth;
+-ms-text-size-adjust:100%;
+-moz-text-size-adjust:100%;
+-webkit-text-size-adjust:100%;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+}
+*, *:before, *:after{box-sizing: inherit;}
+*:before, *:after{display: block;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+button{cursor: pointer;}
+button, input, textarea {
+font-family: inherit; 
+font-size: 100%; 
+line-height: 1.15; 
+margin: 0;}
+textarea {overflow: auto;resize: none;}
+img {display: block;border-style: none;border: none;}
+ul {margin: 0;padding: 0;list-style-type: none;}
+a {text-decoration: none;}
+video, svg {display: block;}
+
+body {
+background: #921E9B;
+background: -webkit-linear-gradient(bottom left, #921E9B, #EF57EF);
+background: -moz-linear-gradient(bottom left, #921E9B, #EF57EF);
+background: linear-gradient(to top right, #921E9B, #EF57EF);;}
+.main {  
+min-height: 100%;
+overflow: hidden; 
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.container {
+max-width: 90em;
+margin: 0 auto;
+padding-left: 1.25rem;
+padding-right: 1.25rem;
+background-color: transparent;
+}
+.header-container {
+padding: 1.25rem;
+display: flex;    
+justify-content: space-between;
+align-items: center;
+}
+.header {
+}
+.header__logo {
+width: 10rem;
+margin: 2rem 1rem 1rem;
+}
+.header-image {
+width: 100%;
+height: auto;
+}
+.header__item {
+display: flex;
+justify-content: center;
+align-items: center;
+align-self: flex-start;
+width: 20rem;
+margin-top: 2rem;
+}
+.header-search {
+height: 3.5rem;
+width: 100%;
+padding-left: 1rem;
+box-sizing: border-box;
+background-color: #F386F6;
+border: 5px solid #921E9B;
+border-radius: 2rem;
+color: #400844;
+}
+.header-search::placeholder {
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 40px;
+color: #400844;
+} 
+
+
+
+/* main-content */
+
+.main-content {
+flex: 1 1 auto;
+}
+.main-container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+flex: 1 1 33.333%;
+}
+
+
+
+/* footer */
+
+.footer {
+background: #720C79;
+}
+.footer-container {
+padding-top: 1rem;
+padding-bottom: 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.git-hub {
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 1.25rem;
+line-height: 2rem;
+margin-right: 0.625rem;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+color: #FFFFFF;
+}
+.copyright {
+display: block;
+margin-right: 0.62rem;
+}
+.data {
+display: block;
+margin-right: 1.2rem;
+}
+.git-hub-icon {
+display: block;
+fill: #FFFFFF;
+width: 4.37rem;
+height: 4.37rem;
+transition: all 0.5s;
+}
+.git-hub-icon:hover, .git-hub-icon:focus {
+fill: #f7a2f0;
+transform: scale(1.2);
+}
+.git-hub-icon:active {
+opacity: 0.5;
+}
+.rs-school {
+margin-left: 1rem;
+margin-right: 1rem;
+}
+.rs-school-icon {
+display: inline-block;
+fill: #FFFFFF;
+transition: all 0.5s;
+width: 7.5rem;
+height: 3rem;
+}
+.rs-school-icon:hover, .rs-school-link:focus {
+fill: #f7a2f0;
+transform: scale(1.2);
+}
+.rs-school-icon:active {
+opacity: 0.5;
+}
+.social-list-container {
+margin-left: 1rem;
+}
+.social-list {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+.social-list-link {
+text-align: center;
+display: inline-block;
+padding-left: 0.4rem;
+padding-right: 0.4rem;
+}
+.social-list-item:first-child .social-list-link {
+padding-left: 0;
+}
+.social-list-item:last-child .social-list-link {
+padding-right: 0;
+}
+.footer-1inst {
+width: 2rem;
+height: 2rem;
+fill: white;
+transition: all 0.5s;
+}
+.footer-2fb {
+width: 2rem;
+height: 2rem;
+fill: white;
+transition: all 0.5s;
+}
+.footer-3tw {
+width: 2rem;
+height: 2rem;
+fill: white;
+transition: all 0.5s;
+}
+.footer-4pint {
+width: 2rem;
+height: 2rem;
+fill: white;
+transition: all 0.5s;
+}
+.footer-1inst:hover, .footer-1inst:focus, .footer-2fb:hover, .footer-2fb:focus, .footer-3tw:hover, .footer-3tw:focus, .footer-4pint:hover, .footer-4pint:focus {
+fill: #f7a2f0;
+transform: scale(1.5);
+}
+.footer-1inst:active, .footer-2fb:active, .footer-3tw:active, .footer-4pint:active {
+opacity: 0.5;
+}
+
+
+
+/* --------- Adaptation ----------------------------------------------------- */
+
+@media (max-width: 769px) {
+.footer {
+flex-direction: column;
+}
+.git-hub {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.625rem;
+}
+.rs-school {
+margin-bottom: 1rem;
+}
+.rs-school-icon {
+height: 6.5rem;
+}
+.social-list-container {
+    margin-right: 1rem;
+}
+.social-list {
+    justify-content: center;
+}
+}
+
+
+@media (max-width: 560px) {
+
+}
+@media (max-width: 410px) {
+
+}
