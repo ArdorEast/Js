@@ -40,7 +40,9 @@ body {
 background: #921E9B;
 background: -webkit-linear-gradient(bottom left, #921E9B, #EF57EF);
 background: -moz-linear-gradient(bottom left, #921E9B, #EF57EF);
-background: linear-gradient(to top right, #921E9B, #EF57EF);;}
+background: linear-gradient(to top right, #921E9B, #EF57EF);;
+background-attachment: fixed;
+}
 .main {  
 min-height: 100%;
 overflow: hidden; 
@@ -71,18 +73,25 @@ margin: 2rem 1rem 1rem;
 width: 100%;
 height: auto;
 }
-.header__item {
+.header-form {
 display: flex;
 justify-content: center;
 align-items: center;
 align-self: flex-start;
 width: 20rem;
 margin-top: 2rem;
+position: relative;
 }
 .header-search {
-height: 3.5rem;
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 1.4rem;
+line-height: 2.5rem;
+height: 3.7rem;
 width: 100%;
-padding-left: 1rem;
+padding-left: 2.6rem;
+padding-right: 0.8rem;
 box-sizing: border-box;
 background-color: #F386F6;
 border: 5px solid #921E9B;
@@ -93,10 +102,28 @@ color: #400844;
 font-family: Inter;
 font-style: normal;
 font-weight: normal;
-font-size: 20px;
-line-height: 40px;
+font-size: 1.4rem;
+line-height: 2.5rem;
 color: #400844;
-} 
+}
+.search-icon {
+width: 2rem;
+height: 2rem;
+position: absolute;
+top: 21%;
+left: 4%;
+background: url('../assets/img/search.png') center no-repeat;
+background-size: contain;
+}
+/* .search-reset {
+width: 2rem;
+height: 2rem;
+position: absolute;
+top: 21%;
+right: 4%;
+background: url('../assets/img/close.png') center no-repeat;
+background-size: contain;
+} */
 
 
 
@@ -112,8 +139,80 @@ align-items: center;
 flex-wrap: wrap;
 flex: 1 1 33.333%;
 }
-
-
+.create-div {
+width: 16rem;
+font-family: Inter;
+font-style: normal;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+align-self: stretch;
+position: relative;
+z-index: 2;
+margin: 1rem;
+padding: 1rem;
+color: #000;
+cursor: pointer;
+transition: all 0.5s;
+overflow: hidden;
+}
+.create-div:hover .create-description-wrapper {
+bottom: 1rem;
+z-index: 4;
+border-radius: 7% 0 0 10%;
+}
+.create-div:hover .create-img {
+border-radius: 8% 8% 0 8%;
+}
+.create-img {
+width: 100%;
+object-fit: cover;
+border-radius: 8%;
+position: relative;
+z-index: 3;
+transition: all 0.5s;
+}
+.create-title {
+font-size: 1.5rem;
+line-height: 2.8rem;
+margin-bottom: 0.8rem;
+}
+.create-description-wrapper {
+height: 70%;
+width: 88%;
+font-size: 1.1rem;
+line-height: 1.7rem;
+color: #fff;
+background-color: rgb(114, 12, 121, 0.8);
+padding: 0.9rem;
+padding-top: 1rem;
+border-radius: 7% 7% 10% 10%;
+position: absolute;
+bottom: -100%;
+left: 6%;
+transition: all 0.5s;
+overflow-y: scroll;
+}
+.create-description-wrapper::-webkit-scrollbar {
+width: 0.4rem;
+border-radius: 10%;
+background: #F386F6;
+margin-bottom: 1rem;
+}
+.create-description-wrapper::-webkit-scrollbar-thumb {
+width: 0.4rem;
+border-radius: 10%;
+background-color: #400844;
+}
+.create-description {
+margin-bottom: 0.5rem;
+}
+.create-year {
+width: 80%;
+font-size: 1.3rem;
+line-height: 1.7rem;
+}
 
 /* footer */
 
@@ -236,8 +335,33 @@ opacity: 0.5;
 /* --------- Adaptation ----------------------------------------------------- */
 
 @media (max-width: 769px) {
-.footer {
-flex-direction: column;
+.header__logo {
+    width: 9rem;
+    margin: 2rem 1rem 0.5rem;
+}
+.header-form {
+    width: 15rem;
+}
+.header-search {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    height: 3rem;
+    padding-left: 2.4rem;
+}
+.search-icon {
+width: 1.8rem;
+height: 1.8rem;
+top: 21%;
+left: 4%;
+}
+.create-div {
+    width: 24rem;
+    margin: 0.5rem;
+}
+.create-title {
+font-size: 1.7rem;
+line-height: 2.3rem;
+margin-bottom: 0.8rem;
 }
 .git-hub {
     font-size: 1.1rem;
@@ -245,10 +369,10 @@ flex-direction: column;
     margin-left: 0.625rem;
 }
 .rs-school {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 .rs-school-icon {
-height: 6.5rem;
+    height: 6.5rem;
 }
 .social-list-container {
     margin-right: 1rem;
@@ -260,8 +384,49 @@ height: 6.5rem;
 
 
 @media (max-width: 560px) {
-
+.main-container {    
+    flex: 0 1 70%;
+}
+.create-div {
+    width: 24rem;
+}
+.footer-container {
+    flex-direction: column;
+}
 }
 @media (max-width: 410px) {
-
+.header-container {
+    flex-wrap: wrap;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.create-title {
+font-size: 1.4rem;
+line-height: 1.7rem;
+margin-bottom: 0.7rem;
+}
+.git-hub-icon {
+    width: 3.7rem;
+    height: 3.7rem;
+}
+.rs-school-icon {
+    width: 6rem;
+    height: 2.8rem;
+}
+.footer-1inst {
+width: 1.6rem;
+height: 1.6rem;
+}
+.footer-2fb {
+width: 1.6rem;
+height: 1.6rem;
+}
+.footer-3tw {
+width: 1.6rem;
+height: 1.6rem;
+}
+.footer-4pint {
+width: 1.6rem;
+height: 1.6rem;
+}
 }
