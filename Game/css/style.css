@@ -1,0 +1,742 @@
+@import url('https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css'); /* это для подключения иконок с сайта */
+html, body, h1, h2, h3, p, a, ul, li, nav, textarea {
+margin: 0;
+padding: 0;}
+html, body {
+height: 100%;
+width: 100%;
+border: 0;
+font-size: 16px;
+font-family: Inter, sans-serif;
+font-style: normal;
+font-weight: 400;
+line-height: 1;
+text-decoration-skip: objects;
+scroll-behavior: smooth;
+-ms-text-size-adjust:100%;
+-moz-text-size-adjust:100%;
+-webkit-text-size-adjust:100%;
+box-sizing: border-box;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+}
+*, *:before, *:after{box-sizing: inherit;}
+*:before, *:after{display: block;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+button{cursor: pointer;}
+button, input, textarea {
+font-family: inherit; 
+font-size: 100%; 
+line-height: 1.15; 
+margin: 0;}
+textarea {overflow: auto;resize: none;}
+img {display: block;border-style: none;border: none;}
+ul {margin: 0;padding: 0;list-style-type: none;}
+a {text-decoration: none;}
+video, svg {display: block;}
+
+body {
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+background: #921E9B;
+background: -webkit-linear-gradient(bottom left, #921E9B, #EF57EF);
+background: -moz-linear-gradient(bottom left, #921E9B, #EF57EF);
+background: linear-gradient(to top right, #921E9B, #EF57EF);;
+background-attachment: fixed;
+}
+body.lock {
+overflow: hidden;
+}
+.main {  
+min-height: 100%;
+overflow: hidden; 
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.container {
+max-width: 90em;
+margin: 0 auto;
+padding-left: 1.25rem;
+padding-right: 1.25rem;
+background-color: transparent;
+}
+.header-container {
+padding: 1rem;
+display: flex;    
+justify-content: space-between;
+align-items: flex-start;
+}
+
+.header__logo {
+width: 7rem;
+margin: 1rem;
+}
+.header-image {
+width: 100%;
+height: auto;
+}
+.header-item {
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+justify-content: center;
+}
+.header-settings {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+.music {
+width: 25px;
+height: 25px;
+background: url('../assets/img/musicmute.png') no-repeat;
+background-size: cover;
+margin-right: 2rem;
+margin-left: 1rem;
+cursor: pointer;
+transition: all 0.5s ease-in-out;
+}
+.music:hover, .music:focus {
+transform: scale(1.3);
+}
+.music.active {
+background: url('../assets/img/music.png') no-repeat;
+background-size: cover;
+}
+.rating-item {
+font-family: Inter;
+color: #FFFFFF;
+padding: 0.5rem 1rem 0 2.3rem;
+position: relative;
+cursor: pointer;
+transition: all 0.5s ease-in-out;
+}
+.rating-item::before {
+position: absolute;
+display: block;
+content: '';
+width: 25px;
+height: 25px;
+top: 10%;
+left: 0;
+background: url('../assets/img/trophy.png') no-repeat;
+background-size: cover;
+}
+.rating-item:hover, .rating-item:focus {
+color: rgba(241, 220, 30, 0.877);
+transform: scale(1.1);
+}
+.stats {
+font-size: 1.3rem;
+}
+.stats-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+position: fixed;
+top: 3%;
+right: 5%;
+z-index: 20;
+width: 60%;
+background-color: darkorchid;
+color: #fff;
+border-radius: 1rem;
+cursor: context-menu;
+overflow: auto;
+visibility: hidden;
+}
+.stats-item.active{
+visibility: visible;
+}
+.stats-title {
+font-size: 3rem;
+padding: 1rem;
+margin-top: 1rem;
+margin-bottom: 0.5rem;
+}
+.stats-score {
+font-size: 1.5rem;
+line-height: 1.7rem;
+font-weight: bold;
+margin-bottom: 0.3rem;
+padding: 0.5rem 3rem;
+position: relative;
+}
+.stats-score::before, .stats-score::after {
+display: block;
+content: '';
+position: absolute;
+top: 8%;
+width: 2rem;
+height: 2rem;
+background: url('../assets/img/star.png') no-repeat;
+background-size: contain;
+}
+.stats-score::before {
+left: 0;
+}
+.stats-score::after {
+right: 0;
+}
+.stats-back {
+width: 150px;
+height: 55px;
+font-size: 2rem;
+font-weight: bold;
+border-radius: 15px;
+color: #fff;
+background: rgba(241, 220, 30, 0.877);
+border: 2px solid rgba(219, 198, 5, 0.726);
+margin: 1.5rem;
+margin-bottom: 2rem;
+}
+.game-name{
+font-family: Dancing Script, Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 5rem;
+padding: 1rem;
+margin-bottom: 0.5rem;
+color: #FFFFFF;
+}
+
+
+
+/* main-content */
+
+.main-content {
+flex: 1 1 auto;
+}
+.main-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 1rem;
+padding-bottom: 4rem;
+}
+.description {
+width: 80%;
+font-family: Dancing Script, Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 1.8rem;
+line-height: 2rem;
+letter-spacing: 0.1rem;
+padding: 0.5rem 1rem;
+margin-bottom: 1.5rem;
+color: #FFFFFF;
+}
+.buttons {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+margin-bottom: 0.4rem;
+}
+.start-button {
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 3rem;
+padding: 1rem;
+margin: 0 0.5rem 1rem;
+color: #FFFFFF;
+background-color: rgb(214, 54, 54);
+border: 2px solid rgb(180, 26, 26);
+border-radius: 12%;
+width: 210px;
+height: 110px;
+}
+
+.main-content-item {
+width: 700px;
+height: 400px;
+background: url('../assets/img/field3.jpg') center  no-repeat;
+background-size: cover;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+}
+.countdown {
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 3rem;
+padding: 1.2rem;
+margin-bottom: 0.5rem;
+color: #FFFFFF;
+width: 260px;
+}
+.score {
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 3rem;
+padding: 1.2rem 1rem 1.2rem 2.9rem;
+margin-bottom: 0.5rem;
+color: #FFFFFF;
+width: 165px;
+position: relative;
+background: url('../assets/svg/Seed.svg') left no-repeat;
+background-size: 2.2rem;
+}
+.grass {
+width: 100%;
+height: 40px;
+position: absolute;
+left: 0;
+bottom: 0;
+background: url('../assets/svg/grass.svg')  no-repeat;
+background-size: cover;
+z-index: 5;
+}
+.hole {
+position: absolute;
+overflow: hidden;
+}
+.hole1 {
+bottom: 20px;
+left: 70px;
+width: 70px;
+height: 110px;
+}
+.hole2 {
+bottom: 82px;
+left: 10px;
+width: 50px;
+height: 70px;
+}
+.hole3 {
+bottom: 70px;
+left: 150px;
+width: 50px;
+height: 70px;
+}
+.hole4 {
+bottom: 20px;
+left: 250px;
+width: 70px;
+height: 110px;
+}
+.hole5 {
+bottom: 83px;
+left: 330px;
+width: 50px;
+height: 70px;
+}
+.hole6 {
+bottom: 80px;
+right: 30px;
+width: 50px;
+height: 70px;
+}
+.hole7 {
+bottom: 65px;
+right: 170px;
+width: 50px;
+height: 70px;
+}
+.hole8 {
+bottom: 20px;
+right: 250px;
+width: 70px;
+height: 110px;
+}
+.hole9 {
+bottom: 20px;
+right: 90px;
+width: 70px;
+height: 110px;
+}
+.hole2::after, .hole3::after, .hole5::after, .hole6::after, .hole7::after  {
+position: absolute;
+display: block;
+content: '';
+width: 30px;
+height: 25px;
+left: 20%;
+bottom: 0;
+background: url('../assets/svg/grassgreen.svg')  no-repeat;
+background-size: 40px 40px;
+z-index: 10;
+}
+.hole.up .mouse {
+bottom: 0;
+}
+.mouse {
+position: absolute;
+left: 0;
+bottom: -100%;
+background: url('../assets/svg/Mousesmall.svg')  no-repeat;
+background-size: cover;
+transition: all 0.7s;
+z-index: 6;
+cursor: pointer;
+}
+:where(.mouse) {
+background-size: cover;
+}
+:where(.mouselarge) {
+width: 70px;
+height: 110px;
+}
+:where(.mousemiddle) {
+width: 50px;
+height: 65px;
+}
+.mousesmall {
+width: 45px;
+height: 55px;
+}
+.mouse.seed {
+width: 45px;
+height: 55px;
+background: url('../assets/svg/Seed.svg') center center no-repeat;
+background-size: contain;
+}
+.game-over {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+padding: 0.5rem;
+width: 60%;
+height: 80%;
+position: fixed;
+top: 10%;
+left: 20%;
+z-index: 15;
+background: #921E9B;
+color: #fff;
+border-radius: 8%;
+overflow: auto;
+visibility: hidden;
+}
+.game-over.active {
+visibility: visible;
+}
+.countdown-game-over {
+font-size: 3.3rem;
+padding: 0.5rem;
+}
+.congratulation {
+font-size: 2.6rem;
+padding: 0.5rem;
+}
+.score-game-over {
+font-size: 2.6rem;
+padding: 0.5rem 3rem;
+margin-bottom: 1.5rem;
+position: relative;
+}
+.score-game-over::before, .score-game-over::after {
+display: block;
+content: '';
+position: absolute;
+top: 20%;
+width: 2rem;
+height: 2rem;
+background: url('../assets/img/star.png') no-repeat;
+background-size: contain;
+}
+.score-game-over::before {
+left: 0;
+}
+.score-game-over::after {
+right: 0;
+}
+.back {
+width: 150px;
+height: 55px;
+font-size: 2rem;
+font-weight: bold;
+border-radius: 15px;
+color: #fff;
+background: rgba(241, 220, 30, 0.877);
+border: 2px solid rgba(219, 198, 5, 0.726);
+}
+
+
+
+/* footer */
+
+.footer {
+background: #720C79;
+}
+.footer-container {
+padding-top: 1rem;
+padding-bottom: 1rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.git-hub {
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 1.25rem;
+line-height: 2rem;
+margin-right: 0.625rem;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+color: #FFFFFF;
+}
+.copyright {
+display: block;
+margin-right: 0.62rem;
+}
+.data {
+display: block;
+margin-right: 1.2rem;
+}
+.git-hub-icon {
+display: block;
+fill: #FFFFFF;
+width: 4.37rem;
+height: 4.37rem;
+transition: all 0.5s;
+}
+.git-hub-icon:hover, .git-hub-icon:focus {
+fill: #f7a2f0;
+transform: scale(1.2);
+}
+.git-hub-icon:active {
+opacity: 0.5;
+}
+.rs-school {
+margin-left: 1rem;
+margin-right: 1rem;
+}
+.rs-school-icon {
+display: inline-block;
+transition: all 0.5s;
+width: 7.5rem;
+height: 3rem;
+}
+.rs-school-icon:hover, .rs-school-link:focus {
+transform: scale(1.2);
+}
+.rs-school-icon:active {
+opacity: 0.5;
+}
+.social-list-container {
+margin-left: 1rem;
+}
+.social-list {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+.social-list-link {
+text-align: center;
+display: inline-block;
+padding-left: 0.4rem;
+padding-right: 0.4rem;
+}
+.social-list-item:first-child .social-list-link {
+padding-left: 0;
+}
+.social-list-item:last-child .social-list-link {
+padding-right: 0;
+}
+.footer-1inst {
+width: 2rem;
+height: 2rem;
+fill: white;
+transition: all 0.5s;
+}
+.footer-2fb {
+width: 2rem;
+height: 2rem;
+fill: white;
+transition: all 0.5s;
+}
+.footer-3tw {
+width: 2rem;
+height: 2rem;
+fill: white;
+transition: all 0.5s;
+}
+.footer-4pint {
+width: 2rem;
+height: 2rem;
+fill: white;
+transition: all 0.5s;
+}
+.footer-1inst:hover, .footer-1inst:focus, .footer-2fb:hover, .footer-2fb:focus, .footer-3tw:hover, .footer-3tw:focus, .footer-4pint:hover, .footer-4pint:focus {
+fill: #f7a2f0;
+transform: scale(1.5);
+}
+.footer-1inst:active, .footer-2fb:active, .footer-3tw:active, .footer-4pint:active {
+opacity: 0.5;
+}
+
+
+
+/* --------- Adaptation ----------------------------------------------------- */
+
+@media (max-width: 769px) {
+.header__logo {
+    width: 8rem;
+    margin: 2rem 1rem 0.5rem;
+}
+.stats-item {
+width: 85%;
+height: 90%;
+}
+.stats-title {
+font-size: 2rem;
+}
+.stats-score {
+font-size: 1.3rem;
+line-height: 1.5rem;
+}
+.stats-score::before, .stats-score::after {
+top: 9%;
+width: 1.6rem;
+height: 1.6rem;
+}
+.game-name{
+font-size: 3rem;
+padding: 1rem;
+margin-bottom: 0.5rem;
+}
+.start-button {
+font-size: 2rem;
+width: 170px;
+height: 90px;
+}
+.main-content-item {
+width: 525px;
+height: 300px;
+}
+.hole1 {
+bottom: 12px;
+left: 50px;
+}
+.hole2 {
+bottom: 60px;
+left: 10px;
+}
+.hole3 {
+bottom: 65px;
+left: 130px;
+}
+.hole4 {
+bottom: 12px;
+left: 170px;
+}
+.hole5 {
+bottom: 83px;
+left: 365px;
+}
+.hole6 {
+bottom: 75px;
+right: 15px;
+}
+.hole7 {
+bottom: 59px;
+right: 222px;
+}
+.hole8 {
+bottom: 12px;
+right: 160px;
+}
+.hole9 {
+bottom: 12px;
+right: 50px;
+}
+.game-over {
+width: 80%;
+}
+.countdown-game-over {
+font-size: 2.8rem;
+}
+.congratulation {
+font-size: 2.3rem;
+}
+.git-hub {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.625rem;
+}
+.rs-school {
+    margin-bottom: 1rem;
+}
+.rs-school-icon {
+    height: 6.5rem;
+}
+.social-list-container {
+    margin-right: 1rem;
+}
+.social-list {
+    justify-content: center;
+}
+}
+
+
+@media (max-width: 560px) {
+
+.footer-container {
+    flex-direction: column;
+}
+}
+@media (max-width: 410px) {
+.header-container {
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+.header-settings {
+position: fixed;
+top: 3%;
+right: 5%;
+}
+.stats-score {
+font-size: 1.2rem;
+}
+.countdown-game-over {
+font-size: 1.8rem;
+}
+.congratulation {
+font-size: 1.8rem;
+}
+.score-game-over {
+font-size: 1.8rem;
+}
+.git-hub-icon {
+    width: 3.7rem;
+    height: 3.7rem;
+}
+.rs-school-icon {
+    width: 6rem;
+    height: 2.8rem;
+}
+.footer-1inst {
+width: 1.6rem;
+height: 1.6rem;
+}
+.footer-2fb {
+width: 1.6rem;
+height: 1.6rem;
+}
+.footer-3tw {
+width: 1.6rem;
+height: 1.6rem;
+}
+.footer-4pint {
+width: 1.6rem;
+height: 1.6rem;
+}
+}
