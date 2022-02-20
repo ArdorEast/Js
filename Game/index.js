@@ -96,9 +96,9 @@ function startGame(min, max) {
     }, 1000);
 }
 
-startBtnLight.addEventListener('click', () => startGame(1500, 2000));
-startBtnMiddle.addEventListener('click', () => startGame(1000, 1400));
-startBtnPro.addEventListener('click', () => startGame(700, 1100));
+startBtnLight.addEventListener('click', () => startGame(1200, 1400));
+startBtnMiddle.addEventListener('click', () => startGame(900, 1200));
+startBtnPro.addEventListener('click', () => startGame(600, 900));
 
 function catchMouse() {
     score++;
